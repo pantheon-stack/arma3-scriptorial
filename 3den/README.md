@@ -55,13 +55,13 @@ Creando Fases en Misiones
 Crear mision con triggers que llamen a la siguiente funcion
 
 ```sqf
-	call compile preprocessFileLineNumbers "scripts\mi_fase.sqf";
+	[] spawn compile preprocessFileLineNumbers "fases\mi_fase.sqf";
 ```
 
 Utilizando un Headless client
 ```sqf
 	if ( !hasInterface && !isServer ) {
-    call compile preprocessFileLineNumbers "scripts\mi_fase.sqf";
+    [] spawn compile preprocessFileLineNumbers "fases\mi_fase.sqf";
   }
 ```
 
