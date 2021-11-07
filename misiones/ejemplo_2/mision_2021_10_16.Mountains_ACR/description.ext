@@ -1,0 +1,8 @@
+
+class CfgFunctions {
+  class COP {
+    class HeadlessClients {
+      class loadToHeadlessClient {};
+    };
+  };
+};

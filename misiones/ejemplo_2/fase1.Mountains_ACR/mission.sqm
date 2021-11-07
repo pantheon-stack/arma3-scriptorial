@@ -8,7 +8,7 @@ class EditorData
 	toggles=69;
 	class ItemIDProvider
 	{
-		nextID=141;
+		nextID=171;
 	};
 	class MarkerIDProvider
 	{
@@ -20,10 +20,10 @@ class EditorData
 	};
 	class Camera
 	{
-		pos[]={1861.6028,327.79672,4919.688};
-		dir[]={0.43022478,-0.52340531,0.73565584};
-		up[]={0.26426536,0.85200423,0.45188946};
-		aside[]={0.86332667,-2.0989683e-007,-0.50488257};
+		pos[]={1299.4252,488.41006,4069.8347};
+		dir[]={0.19453627,-0.28040966,0.9400419};
+		up[]={0.05684128,0.95985699,0.27465943};
+		aside[]={0.97932935,3.5762059e-007,-0.20267066};
 	};
 };
 binarizationWanted=0;
@@ -95,7 +95,7 @@ class Mission
 	};
 	class Entities
 	{
-		items=19;
+		items=24;
 		class Item0
 		{
 			dataType="Group";
@@ -1638,8 +1638,8 @@ class Mission
 					dataType="Object";
 					class PositionInfo
 					{
-						position[]={1257.1823,211.83429,3880.4829};
-						angles[]={0,3.1105382,6.2823396};
+						position[]={1259,211.73224,3881.05};
+						angles[]={0.0009134906,3.1105382,0.008045557};
 					};
 					side="Independent";
 					flags=4;
@@ -1698,8 +1698,8 @@ class Mission
 					dataType="Object";
 					class PositionInfo
 					{
-						position[]={1256.2965,211.82628,3882.3176};
-						angles[]={0,5.4101543,6.2823396};
+						position[]={1258,211.78685,3883.05};
+						angles[]={0.0095121255,5.4101543,6.2692456};
 					};
 					side="Independent";
 					flags=6;
@@ -1757,7 +1757,7 @@ class Mission
 				{
 					dataType="Waypoint";
 					loiterAltitude=-3.4028235e+038;
-					position[]={1257.7216,211.79213,3882.7029};
+					position[]={1260,211.75754,3883};
 					class Effects
 					{
 					};
@@ -2234,7 +2234,7 @@ class Mission
 					dataType="Waypoint";
 					loiterAltitude=-3.4028235e+038;
 					position[]={2000,198.34,5100};
-					expActiv="[this, this, 400] call CBA_fnc_taskPatrol";
+					expActiv="[this, this, 1000] call CBA_fnc_taskPatrol";
 					class Effects
 					{
 					};
@@ -2279,7 +2279,7 @@ class Mission
 				};
 			};
 			id=133;
-			atlOffset=-0.0036621094;
+			atlOffset=-0.0039825439;
 			class CustomAttributes
 			{
 				class Attribute0
@@ -2309,7 +2309,7 @@ class Mission
 			dataType="Object";
 			class PositionInfo
 			{
-				position[]={118.31023,221.26294,7888.8896};
+				position[]={118.30985,221.26265,7888.8896};
 				angles[]={6.2278233,2.9121342,6.2289405};
 			};
 			side="Independent";
@@ -2319,7 +2319,7 @@ class Mission
 			};
 			id=134;
 			type="UK3CB_TKA_I_Mi_24V";
-			atlOffset=-0.0036621094;
+			atlOffset=-0.0039825439;
 			class CustomAttributes
 			{
 				class Attribute0
@@ -2338,6 +2338,567 @@ class Mission
 								};
 							};
 							value="[[[[""FirstAidKit""],[1]],[[],[]],[[],[]],[[],[]]],false]";
+						};
+					};
+				};
+				nAttributes=1;
+			};
+		};
+		class Item19
+		{
+			dataType="Group";
+			side="Independent";
+			class Entities
+			{
+				items=4;
+				class Item0
+				{
+					dataType="Object";
+					class PositionInfo
+					{
+						position[]={2035,198.72145,5083.0498};
+					};
+					side="Independent";
+					flags=7;
+					class Attributes
+					{
+						rank="SERGEANT";
+					};
+					id=142;
+					type="UK3CB_TKM_I_TL";
+					class CustomAttributes
+					{
+						class Attribute0
+						{
+							property="speaker";
+							expression="_this setspeaker _value;";
+							class Value
+							{
+								class data
+								{
+									class type
+									{
+										type[]=
+										{
+											"STRING"
+										};
+									};
+									value="Male02PER";
+								};
+							};
+						};
+						class Attribute1
+						{
+							property="pitch";
+							expression="_this setpitch _value;";
+							class Value
+							{
+								class data
+								{
+									class type
+									{
+										type[]=
+										{
+											"SCALAR"
+										};
+									};
+									value=1.02;
+								};
+							};
+						};
+						nAttributes=2;
+					};
+				};
+				class Item1
+				{
+					dataType="Object";
+					class PositionInfo
+					{
+						position[]={2037.9998,198.67104,5080.0503};
+					};
+					side="Independent";
+					flags=5;
+					class Attributes
+					{
+						skill=0.44999999;
+						rank="CORPORAL";
+					};
+					id=143;
+					type="UK3CB_TKM_I_MG";
+				};
+				class Item2
+				{
+					dataType="Object";
+					class PositionInfo
+					{
+						position[]={2039.9998,198.56744,5080.0503};
+					};
+					side="Independent";
+					flags=5;
+					class Attributes
+					{
+						skill=0.40000001;
+					};
+					id=144;
+					type="UK3CB_TKM_I_MG_ASST";
+					atlOffset=1.5258789e-005;
+				};
+				class Item3
+				{
+					dataType="Object";
+					class PositionInfo
+					{
+						position[]={2041.9998,198.48425,5080.0503};
+					};
+					side="Independent";
+					flags=5;
+					class Attributes
+					{
+						skill=0.40000001;
+					};
+					id=145;
+					type="UK3CB_TKM_I_RIF_1";
+					atlOffset=1.5258789e-005;
+				};
+			};
+			class Attributes
+			{
+				init="[this, this, 50, 2, 0] call CBA_fnc_taskDefend;";
+				behaviour="SAFE";
+			};
+			id=141;
+			class CustomAttributes
+			{
+				class Attribute0
+				{
+					property="groupID";
+					expression="                            if (isNil 'CBA_fnc_setCallsign') then {                                _this setGroupID [_value];                            } else {                                [_this, _value] call CBA_fnc_setCallsign;                            };                        ";
+					class Value
+					{
+						class data
+						{
+							class type
+							{
+								type[]=
+								{
+									"STRING"
+								};
+							};
+							value="F1 Alpha 3-7";
+						};
+					};
+				};
+				nAttributes=1;
+			};
+		};
+		class Item20
+		{
+			dataType="Group";
+			side="Independent";
+			class Entities
+			{
+				items=4;
+				class Item0
+				{
+					dataType="Object";
+					class PositionInfo
+					{
+						position[]={2066,196.32466,5122.0498};
+					};
+					side="Independent";
+					flags=7;
+					class Attributes
+					{
+						rank="SERGEANT";
+					};
+					id=147;
+					type="UK3CB_TKM_I_TL";
+					atlOffset=1.5258789e-005;
+				};
+				class Item1
+				{
+					dataType="Object";
+					class PositionInfo
+					{
+						position[]={2069,196.34865,5119.0498};
+					};
+					side="Independent";
+					flags=5;
+					class Attributes
+					{
+						skill=0.44999999;
+						rank="CORPORAL";
+					};
+					id=148;
+					type="UK3CB_TKM_I_RIF_2";
+				};
+				class Item2
+				{
+					dataType="Object";
+					class PositionInfo
+					{
+						position[]={2071,196.34544,5119.0498};
+					};
+					side="Independent";
+					flags=5;
+					class Attributes
+					{
+						skill=0.40000001;
+					};
+					id=149;
+					type="UK3CB_TKM_I_LAT";
+				};
+				class Item3
+				{
+					dataType="Object";
+					class PositionInfo
+					{
+						position[]={2073,196.34224,5119.0498};
+					};
+					side="Independent";
+					flags=5;
+					class Attributes
+					{
+						skill=0.40000001;
+					};
+					id=150;
+					type="UK3CB_TKM_I_RIF_1";
+				};
+			};
+			class Attributes
+			{
+				init="[this, this, 50, 2, 0] call CBA_fnc_taskDefend;";
+				behaviour="SAFE";
+			};
+			id=146;
+			atlOffset=1.5258789e-005;
+			class CustomAttributes
+			{
+				class Attribute0
+				{
+					property="groupID";
+					expression="                            if (isNil 'CBA_fnc_setCallsign') then {                                _this setGroupID [_value];                            } else {                                [_this, _value] call CBA_fnc_setCallsign;                            };                        ";
+					class Value
+					{
+						class data
+						{
+							class type
+							{
+								type[]=
+								{
+									"STRING"
+								};
+							};
+							value="F1 Alpha 3-3";
+						};
+					};
+				};
+				nAttributes=1;
+			};
+		};
+		class Item21
+		{
+			dataType="Group";
+			side="Independent";
+			class Entities
+			{
+				items=4;
+				class Item0
+				{
+					dataType="Object";
+					class PositionInfo
+					{
+						position[]={1660.3285,312.06467,4994.2515};
+					};
+					side="Independent";
+					flags=7;
+					class Attributes
+					{
+						rank="SERGEANT";
+					};
+					id=152;
+					type="UK3CB_TKM_I_TL";
+				};
+				class Item1
+				{
+					dataType="Object";
+					class PositionInfo
+					{
+						position[]={1663.3285,311.77869,4991.2515};
+					};
+					side="Independent";
+					flags=5;
+					class Attributes
+					{
+						skill=0.44999999;
+						rank="CORPORAL";
+					};
+					id=153;
+					type="UK3CB_TKM_I_RIF_2";
+				};
+				class Item2
+				{
+					dataType="Object";
+					class PositionInfo
+					{
+						position[]={1665.3285,311.13876,4991.2515};
+					};
+					side="Independent";
+					flags=5;
+					class Attributes
+					{
+						skill=0.40000001;
+					};
+					id=154;
+					type="UK3CB_TKM_I_LAT";
+				};
+				class Item3
+				{
+					dataType="Object";
+					class PositionInfo
+					{
+						position[]={1667.3285,310.59796,4991.2515};
+					};
+					side="Independent";
+					flags=5;
+					class Attributes
+					{
+						skill=0.40000001;
+					};
+					id=155;
+					type="UK3CB_TKM_I_RIF_1";
+				};
+			};
+			class Attributes
+			{
+				init="[this, this, 100] call CBA_fnc_taskPatrol;";
+				behaviour="SAFE";
+			};
+			id=151;
+			class CustomAttributes
+			{
+				class Attribute0
+				{
+					property="groupID";
+					expression="                            if (isNil 'CBA_fnc_setCallsign') then {                                _this setGroupID [_value];                            } else {                                [_this, _value] call CBA_fnc_setCallsign;                            };                        ";
+					class Value
+					{
+						class data
+						{
+							class type
+							{
+								type[]=
+								{
+									"STRING"
+								};
+							};
+							value="F1 Alpha 3-4";
+						};
+					};
+				};
+				nAttributes=1;
+			};
+		};
+		class Item22
+		{
+			dataType="Group";
+			side="Independent";
+			class Entities
+			{
+				items=4;
+				class Item0
+				{
+					dataType="Object";
+					class PositionInfo
+					{
+						position[]={2211.6934,292.15231,4822.606};
+					};
+					side="Independent";
+					flags=7;
+					class Attributes
+					{
+						rank="SERGEANT";
+					};
+					id=157;
+					type="UK3CB_TKM_I_TL";
+				};
+				class Item1
+				{
+					dataType="Object";
+					class PositionInfo
+					{
+						position[]={2214.6934,292.93121,4819.606};
+					};
+					side="Independent";
+					flags=5;
+					class Attributes
+					{
+						skill=0.44999999;
+						rank="CORPORAL";
+					};
+					id=158;
+					type="UK3CB_TKM_I_RIF_2";
+				};
+				class Item2
+				{
+					dataType="Object";
+					class PositionInfo
+					{
+						position[]={2216.6934,292.48962,4819.606};
+					};
+					side="Independent";
+					flags=5;
+					class Attributes
+					{
+						skill=0.40000001;
+					};
+					id=159;
+					type="UK3CB_TKM_I_LAT";
+				};
+				class Item3
+				{
+					dataType="Object";
+					class PositionInfo
+					{
+						position[]={2218.6934,292.03363,4819.606};
+					};
+					side="Independent";
+					flags=5;
+					class Attributes
+					{
+						skill=0.40000001;
+					};
+					id=160;
+					type="UK3CB_TKM_I_RIF_1";
+				};
+			};
+			class Attributes
+			{
+				init="[this, this, 100] call CBA_fnc_taskPatrol;";
+				behaviour="SAFE";
+			};
+			id=156;
+			class CustomAttributes
+			{
+				class Attribute0
+				{
+					property="groupID";
+					expression="                            if (isNil 'CBA_fnc_setCallsign') then {                                _this setGroupID [_value];                            } else {                                [_this, _value] call CBA_fnc_setCallsign;                            };                        ";
+					class Value
+					{
+						class data
+						{
+							class type
+							{
+								type[]=
+								{
+									"STRING"
+								};
+							};
+							value="F1 Alpha 3-5";
+						};
+					};
+				};
+				nAttributes=1;
+			};
+		};
+		class Item23
+		{
+			dataType="Group";
+			side="Independent";
+			class Entities
+			{
+				items=4;
+				class Item0
+				{
+					dataType="Object";
+					class PositionInfo
+					{
+						position[]={1829.4373,199.58337,4760.522};
+					};
+					side="Independent";
+					flags=7;
+					class Attributes
+					{
+						rank="SERGEANT";
+					};
+					id=162;
+					type="UK3CB_TKM_I_TL";
+				};
+				class Item1
+				{
+					dataType="Object";
+					class PositionInfo
+					{
+						position[]={1832.4373,200.44978,4757.522};
+					};
+					side="Independent";
+					flags=5;
+					class Attributes
+					{
+						skill=0.44999999;
+						rank="CORPORAL";
+					};
+					id=163;
+					type="UK3CB_TKM_I_RIF_2";
+				};
+				class Item2
+				{
+					dataType="Object";
+					class PositionInfo
+					{
+						position[]={1834.4373,200.92339,4757.522};
+					};
+					side="Independent";
+					flags=5;
+					class Attributes
+					{
+						skill=0.40000001;
+					};
+					id=164;
+					type="UK3CB_TKM_I_LAT";
+				};
+				class Item3
+				{
+					dataType="Object";
+					class PositionInfo
+					{
+						position[]={1836.4373,201.39063,4757.522};
+					};
+					side="Independent";
+					flags=5;
+					class Attributes
+					{
+						skill=0.40000001;
+					};
+					id=165;
+					type="UK3CB_TKM_I_RIF_1";
+				};
+			};
+			class Attributes
+			{
+				init="[this, this, 100] call CBA_fnc_taskPatrol;";
+				behaviour="SAFE";
+			};
+			id=161;
+			class CustomAttributes
+			{
+				class Attribute0
+				{
+					property="groupID";
+					expression="                            if (isNil 'CBA_fnc_setCallsign') then {                                _this setGroupID [_value];                            } else {                                [_this, _value] call CBA_fnc_setCallsign;                            };                        ";
+					class Value
+					{
+						class data
+						{
+							class type
+							{
+								type[]=
+								{
+									"STRING"
+								};
+							};
+							value="F1 Alpha 3-6";
 						};
 					};
 				};

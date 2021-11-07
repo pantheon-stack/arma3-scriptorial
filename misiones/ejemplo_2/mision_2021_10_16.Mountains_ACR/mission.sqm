@@ -8,7 +8,7 @@ class EditorData
 	toggles=577;
 	class ItemIDProvider
 	{
-		nextID=292;
+		nextID=293;
 	};
 	class MarkerIDProvider
 	{
@@ -16,14 +16,14 @@ class EditorData
 	};
 	class LayerIndexProvider
 	{
-		nextID=114;
+		nextID=142;
 	};
 	class Camera
 	{
-		pos[]={1446.4294,566.82147,5512.0913};
-		dir[]={-0.81650901,-0.50144368,0.28655234};
-		up[]={-0.47327018,0.8650887,0.1660955};
-		aside[]={0.33119044,1.0599615e-006,0.94369262};
+		pos[]={1967.6611,340.99078,5150.0972};
+		dir[]={-0.63777167,-0.46468279,0.61426157};
+		up[]={-0.33469129,0.88547724,0.32235363};
+		aside[]={0.69370681,-1.4901161e-008,0.72025758};
 	};
 };
 binarizationWanted=0;
@@ -328,7 +328,7 @@ class Mission
 	};
 	class Entities
 	{
-		items=73;
+		items=74;
 		class Item0
 		{
 			dataType="Layer";
@@ -4358,7 +4358,7 @@ class Mission
 			angle=5.837585;
 			class Attributes
 			{
-				onActivation="if( !hasInterface && !isServer ) then {" \n "  [] call compile preprocessFileLineNumbers ""fases\fase1.sqf"";" \n "}";
+				onActivation="[ ""fases\fase1.sqf"",  ""HC1"" ] spawn COP_fnc_loadToHeadlessClient;";
 				sizeA=5;
 				sizeB=1729.811;
 				sizeC=99.029999;
@@ -4376,13 +4376,12 @@ class Mission
 			angle=0.36110857;
 			class Attributes
 			{
-				onActivation="if ( !hasInterface && !isServer ) then {" \n "  [] call compile preprocessFileLineNumbers ""fases\fase2.sqf"";" \n "}";
+				onActivation="[ ""fases/fase2.sqf"",  ""HC2"" ] spawn COP_fnc_loadToHeadlessClient;";
 				sizeA=5;
 				sizeB=2005.818;
 				sizeC=120;
 				activationBy="EAST";
 				isRectangle=1;
-				isServerOnly=1;
 			};
 			id=232;
 			type="EmptyDetectorArea10x10";
@@ -12481,11 +12480,24 @@ class Mission
 			class PositionInfo
 			{
 				position[]={5039.623,143.92386,6390.1758};
-				angles[]={5.9968748,0,6.0235786};
+				angles[]={5.9968815,0,6.0235853};
 			};
 			name="HC1";
 			isPlayable=1;
 			id=290;
+			type="HeadlessClient_F";
+		};
+		class Item73
+		{
+			dataType="Logic";
+			class PositionInfo
+			{
+				position[]={5068.3599,135.98746,6389.52};
+				angles[]={6.0431151,0,5.9547319};
+			};
+			name="HC2";
+			isPlayable=1;
+			id=292;
 			type="HeadlessClient_F";
 		};
 	};
