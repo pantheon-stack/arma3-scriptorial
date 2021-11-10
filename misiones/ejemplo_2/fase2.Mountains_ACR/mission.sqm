@@ -6,16 +6,20 @@ class EditorData
 	scaleGridStep=1;
 	autoGroupingDist=10;
 	toggles=581;
+	mods[]=
+	{
+		"3denEnhanced"
+	};
 	class ItemIDProvider
 	{
 		nextID=146;
 	};
 	class Camera
 	{
-		pos[]={1519.022,589.05664,5586.3472};
-		dir[]={-0.71151602,-0.65865147,0.2451535};
-		up[]={-0.62275755,0.75241393,0.21456955};
-		aside[]={0.32578647,1.5201222e-006,0.94553983};
+		pos[]={887.93024,346.40253,6381.0093};
+		dir[]={0.46897125,-0.099645406,0.87762767};
+		up[]={0.046974067,0.99501777,0.087907068};
+		aside[]={0.8820228,-2.3987377e-007,-0.47131866};
 	};
 };
 binarizationWanted=0;
@@ -1352,7 +1356,7 @@ class Mission
 					class PositionInfo
 					{
 						position[]={909.04523,342.89163,6393.5488};
-						angles[]={6.2431474,3.088552,6.2813525};
+						angles[]={6.2431483,3.088552,6.2813587};
 					};
 					side="Independent";
 					flags=4;
@@ -1361,7 +1365,7 @@ class Mission
 					};
 					id=48;
 					type="UK3CB_TKM_I_RIF_1";
-					atlOffset=9.1552734e-005;
+					atlOffset=0.019866943;
 				};
 				class Item1
 				{
@@ -1369,16 +1373,16 @@ class Mission
 					class PositionInfo
 					{
 						position[]={908.93768,345.06015,6393.2158};
-						angles[]={6.2431474,3.088552,6.2813525};
+						angles[]={6.2431483,3.088552,6.2813587};
 					};
 					side="Independent";
-					flags=2;
+					flags=6;
 					class Attributes
 					{
 					};
 					id=49;
 					type="UK3CB_TKM_I_RIF_1";
-					atlOffset=2.2250977;
+					atlOffset=0.019866943;
 				};
 				class Item2
 				{
@@ -1444,7 +1448,7 @@ class Mission
 				};
 			};
 			id=46;
-			atlOffset=3.0517578e-005;
+			atlOffset=0.019866943;
 			class CustomAttributes
 			{
 				class Attribute0
@@ -1474,8 +1478,8 @@ class Mission
 			dataType="Object";
 			class PositionInfo
 			{
-				position[]={898.00397,346.17508,6415.8765};
-				angles[]={6.2431474,3.088552,6.2813525};
+				position[]={899.00397,346.19308,6415.8765};
+				angles[]={6.2431483,3.088552,6.2813587};
 			};
 			side="Independent";
 			flags=6;
@@ -1485,7 +1489,7 @@ class Mission
 			};
 			id=47;
 			type="UK3CB_TKM_I_BTR60";
-			atlOffset=3.0517578e-005;
+			atlOffset=0.019866943;
 			class CustomAttributes
 			{
 				class Attribute0

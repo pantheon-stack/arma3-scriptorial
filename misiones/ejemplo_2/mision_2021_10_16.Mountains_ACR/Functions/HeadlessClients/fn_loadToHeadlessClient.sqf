@@ -2,7 +2,7 @@
 
   Debe ser ejecutado en contexto global para que itere por los clientes hasta encontrar el headless client
 
-  [ "fases\fase1.sqf",  "HC2" ] spawn COP_fnc_loadToHeadlessClient;
+  [ "fases\fase1.sqf",  "HC1" ] spawn COP_fnc_loadToHeadlessClient;
 
 */
 
