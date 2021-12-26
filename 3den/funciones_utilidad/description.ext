@@ -5,6 +5,7 @@ class CfgFunctions {
       class loadToHeadlessClient {};
     };
     class Utils {
+      class surrenderGroup {};
       class isGroupInVehicle {};
       class isGroup {};
     };
