@@ -1,7 +1,7 @@
 /*
   AUTHOR: Dikus
 
-  [ objeto ] call COP_fnc_isGroup;
+  [ objeto ] call A3L_fnc_isGroup;
 
   Busca en todo grupo existente si el objeto entregado como parametro
     es igual a algún grupo del listado.

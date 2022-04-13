@@ -1,13 +1,31 @@
 
 class CfgFunctions {
-  class COP {
+  class A3L {
     class HeadlessClients {
       class loadToHeadlessClient {};
     };
     class Utils {
-      class surrenderGroup {};
-      class isGroupInVehicle {};
+      class doTeleport {};
       class isGroup {};
+      class isGroupInVehicle {};
+      class surrenderGroup {};
+      class teleportToMarker {};
     };
+    class Logic {
+      class disableLives {};
+      class doDie {};
+      class initLives {};
+      class setLives {};
+    };
+  };
+};
+
+class params {
+  class TotalLives
+  {
+    Title = "Cantidad de vidas por persona";
+    texts[] = { "1", "2", "3", "4", "5", "Sin limite" };
+    values[] = { 1, 2, 3, 4 , 5 , -100 };
+    default = 3;
   };
 };

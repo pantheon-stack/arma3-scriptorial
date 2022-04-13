@@ -1,8 +1,8 @@
 /*
   AUTHOR: Dikus
 
-  [ group player, 3 ] call COP_fnc_isGroupInVehicle;
-  [ player, 3 ] call COP_fnc_isGroupInVehicle;
+  [ group player, 3 ] call A3L_fnc_surrenderGroup;
+  [ player, 3 ] call A3L_fnc_surrenderGroup;
   Si el grupo tiene al menos 3 unidades vivas se rinden
 
 */

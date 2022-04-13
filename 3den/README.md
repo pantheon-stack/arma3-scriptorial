@@ -72,3 +72,6 @@ Como generar una fase?
 
 https://community.bistudio.com/wiki/BIS_fnc_3DENExportSQF
 [ true, false ] call BIS_fnc_3DENExportSQF;
+
+Ejecutar en servidor desde zeus y se copia en portapapeles del cliente
+call BIS_fnc_3DENExportOldSQM
