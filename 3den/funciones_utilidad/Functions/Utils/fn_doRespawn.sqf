@@ -1,14 +1,23 @@
 /*
   AUTHOR: Dikus
 
-  [ group player, 3 ] call A3L_fnc_surrenderGroup;
-  [ player, 3 ] call A3L_fnc_surrenderGroup;
-  Si el grupo tiene al menos 3 unidades vivas se rinden
+  Realiza el manejo de spawns dependiendo de la facción del jugador.
+  [ player ] call A3L_fnc_doRespawn;
 
+  Se ejecuta de forma LOCAL
 */
 
 params [ "_unit" ];
-private [ "_player_side", "_my_respawn" ];
+private [ "_player_side", "_my_respawn", "_last_position" ];
+
+if ( !(local _unit) ) exitWith {
+  false;
+};
+
+_last_position = missionProfileNamespace getVariable ["last_position", []];
+if ( (count _last_position) != 0 ) exitWith {
+  [ _unit, _last_position ] call A3L_fnc_teleportToPosition;
+};
 
 _player_side = side _unit;
 
@@ -41,8 +50,9 @@ switch ( _player_side ) do
 };
 
 if ( !(isNil "_my_respawn") ) then {
-  diag_log "Existe respawn";
-  [ _unit, _my_respawn ] call A3L_fnc_teleportToMarker;
+  [ _unit, _my_respawn ] call A3L_fnc_teleportToPosition;
 } else {
   diag_log "No existe respawn";
 };
+
+true;

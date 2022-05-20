@@ -2,8 +2,9 @@
   AUTHOR: Dikus
 
   Debe ser ejecutado en contexto global para que itere por los clientes hasta encontrar el headless client
+  Al ejecutarse con execVM se ejecuta de forma asincrona
 
-  [ "fases\fase1.sqf",  "HC1" ] spawn A3L_fnc_loadToHeadlessClient;
+  [ "fases\fase1.sqf",  "HC1" ] call A3L_fnc_loadToHeadlessClient;
 
 */
 

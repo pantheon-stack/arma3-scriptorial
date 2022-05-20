@@ -5,11 +5,14 @@ class CfgFunctions {
       class loadToHeadlessClient {};
     };
     class Utils {
-      class doTeleport {};
+      class doRespawn {};
       class isGroup {};
       class isGroupInVehicle {};
+      class loadLoadout {};
+      class saveCurrentPosition {};
+      class saveLoadout {};
       class surrenderGroup {};
-      class teleportToMarker {};
+      class teleportToPosition {};
     };
     class Logic {
       class disableLives {};
