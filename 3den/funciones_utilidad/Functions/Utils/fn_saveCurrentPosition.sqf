@@ -5,6 +5,7 @@
 */
 
 params [ "_unit" ];
+private [ "_my_current_position" ];
 
 if ( !(local _unit) ) exitWith {
   false;
@@ -12,6 +13,7 @@ if ( !(local _unit) ) exitWith {
 
 _my_current_position = getPosATL _unit;
 
-missionProfileNamespace setVariable ['last_position', _my_current_position];
+profileNamespace setVariable ["a3l_last_position", _my_current_position];
+profileNamespace setVariable ["a3l_last_vehicle_id", (vehicle _unit) call BIS_fnc_objectVar];
 
 true;

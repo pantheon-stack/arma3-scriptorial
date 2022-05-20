@@ -9,7 +9,7 @@
 params [ "_unit" , "_respawn_point" ];
 private [ "_pos" ];
 
-if ( isArray _respawn_point ) then {
+if ( (typeName _respawn_point) == "ARRAY" ) then {
   _pos = _respawn_point;
 } else {
   _pos = getPosATL _respawn_point;

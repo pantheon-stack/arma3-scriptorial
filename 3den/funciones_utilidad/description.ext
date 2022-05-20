@@ -31,4 +31,18 @@ class params {
     values[] = { 1, 2, 3, 4 , 5 , -100 };
     default = 3;
   };
+  class SaveTime
+  {
+    Title = "Tiempo de guardado";
+    texts[] = { "5 seg", "30 seg", "1 min", "5 min", "15 min", "30 min" };
+    values[] = { 5, 30, 60, 300 , 900 , 1800 };
+    default = 30;
+  }
+  class MissionGroup
+  {
+    Title = "ID actual de campaña (Cambiar desde ext)";
+    texts[] = { "Campaña Oficial" };
+    values[] = { 220521 };
+    default = 220521;
+  };
 };

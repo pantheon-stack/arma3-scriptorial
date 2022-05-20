@@ -8,15 +8,28 @@
 */
 
 params [ "_unit" ];
-private [ "_player_side", "_my_respawn", "_last_position" ];
+private [ "_player_side", "_my_respawn", "_last_position", "_last_vehicle", "_was_in_vehicle", "_has_last_position" ];
 
 if ( !(local _unit) ) exitWith {
   false;
 };
 
-_last_position = missionProfileNamespace getVariable ["last_position", []];
-if ( (count _last_position) != 0 ) exitWith {
+_last_position = profileNamespace getVariable ["a3l_last_position", []];
+_has_last_position = (count _last_position) != 0;
+
+_last_vehicle_id = profileNamespace getVariable ["a3l_last_vehicle_id", ""];
+
+_last_vehicle = missionNamespace getVariable [_last_vehicle_id, objNull];
+
+//_last_vehicle puede ser el mismo jugador
+_was_in_vehicle = !(isNull _last_vehicle) && _last_vehicle != _unit;
+
+if ( _has_last_position && !_was_in_vehicle ) exitWith {
   [ _unit, _last_position ] call A3L_fnc_teleportToPosition;
+};
+
+if( _has_last_position && _was_in_vehicle && alive _last_vehicle ) exitWith {
+  _unit moveInAny _last_vehicle ;
 };
 
 _player_side = side _unit;
@@ -52,7 +65,7 @@ switch ( _player_side ) do
 if ( !(isNil "_my_respawn") ) then {
   [ _unit, _my_respawn ] call A3L_fnc_teleportToPosition;
 } else {
-  diag_log "No existe respawn";
+  // diag_log "No existe respawn";
 };
 
 true;

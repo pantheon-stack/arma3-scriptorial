@@ -12,6 +12,6 @@ if ( !(local _unit) ) exitWith {
 
 _my_loadout = getUnitLoadout [_unit, false];
 
-missionProfileNamespace setVariable ['last_loadout', _my_loadout];
+profileNamespace setVariable ['a3l_last_loadout', _my_loadout];
 
 true;
