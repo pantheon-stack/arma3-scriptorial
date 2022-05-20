@@ -1,7 +1,7 @@
 params ["_player", "_didJIP"];
 private ["_id_campania_actual", "_id_campania_jugador"];
 
-enableEngineArtillery false;
+enableEngineArtillery ("EngineArtilleryEnabled" call BIS_fnc_getParamValue);
 
 _id_campania_actual = "MissionGroup" call BIS_fnc_getParamValue;
 _id_campania_jugador = profileNamespace getVariable ["a3l_mission_group", 0];
