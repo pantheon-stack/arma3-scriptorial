@@ -13,4 +13,6 @@ if ( _player_lives select 0 ) then {
   };
 };
 
+_newUnit setVariable ["a3l_respawned", true];
+
 [ _newUnit ] call A3L_fnc_doRespawn;
