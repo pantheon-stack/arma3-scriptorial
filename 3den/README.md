@@ -75,3 +75,10 @@ https://community.bistudio.com/wiki/BIS_fnc_3DENExportSQF
 
 Ejecutar en servidor desde zeus y se copia en portapapeles del cliente
 call BIS_fnc_3DENExportOldSQM
+
+
+// OBtener vehiculos
+_my_entities = entities [["AllVehicles"], ["Man"], true, false];
+
+// Obtener cajas
+_my_entities = entities [["ReammoBox_F","Land_CargoBox_V1_F", "Cargo_base_F"], ["AllVehicles", "Man"], true, false];

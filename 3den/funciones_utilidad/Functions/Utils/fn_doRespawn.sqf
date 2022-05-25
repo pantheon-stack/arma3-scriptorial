@@ -14,10 +14,12 @@ if ( !(local _unit) ) exitWith {
   false;
 };
 
-_last_position = profileNamespace getVariable ["a3l_last_position", []];
+_a3l_prefix = format ["a3l_%1", worldName];
+
+_last_position = profileNamespace getVariable [ format ["%1_last_position", _a3l_prefix], []];
 _has_last_position = (count _last_position) != 0;
 
-_last_vehicle_id = profileNamespace getVariable ["a3l_last_vehicle_id", ""];
+_last_vehicle_id = profileNamespace getVariable [ format ["%1_last_vehicle_id", _a3l_prefix], ""];
 
 _last_vehicle = missionNamespace getVariable [_last_vehicle_id, objNull];
 

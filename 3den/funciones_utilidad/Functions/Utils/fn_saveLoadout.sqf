@@ -11,7 +11,8 @@ if ( !(local _unit) ) exitWith {
 };
 
 _my_loadout = getUnitLoadout [_unit, false];
+_a3l_prefix = format ["a3l_%1", worldName];
 
-profileNamespace setVariable ['a3l_last_loadout', _my_loadout];
+profileNamespace setVariable [ format ["%1_last_loadout", _a3l_prefix], _my_loadout];
 
 true;
