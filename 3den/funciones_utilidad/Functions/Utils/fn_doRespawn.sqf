@@ -14,7 +14,7 @@ if ( !(local _unit) ) exitWith {
   false;
 };
 
-_a3l_prefix = format ["a3l_%1", worldName];
+_a3l_prefix = format ["a3l_%1_%2", worldName, missionName];
 
 _last_position = profileNamespace getVariable [ format ["%1_last_position", _a3l_prefix], []];
 _has_last_position = (count _last_position) != 0;

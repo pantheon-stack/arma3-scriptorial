@@ -1,7 +1,9 @@
+respawnOnStart = 1;
 
 class CfgFunctions {
   class A3L {
     class HeadlessClients {
+      class initHeadlessClients {};
       class loadToHeadlessClient {};
     };
     class Utils {
@@ -15,10 +17,25 @@ class CfgFunctions {
       class teleportToPosition {};
     };
     class Logic {
+      class forceTrigger {};
       class disableLives {};
       class doDie {};
       class initLives {};
       class setLives {};
+    };
+  };
+  class A3LCampaign {
+    class Campaign {
+      class initPlayerLocal {};
+      class onPlayerKilled {};
+      class onPlayerRespawn {};
+    };
+  };
+  class A3LLives {
+    class Lives {
+      class initPlayerServer {};
+      class onPlayerKilled {};
+      class onPlayerRespawn {};
     };
   };
 };
@@ -29,7 +46,7 @@ class params {
     Title = "Cantidad de vidas por persona";
     texts[] = { "1", "3", "5", "7", "10", "Sin limite" };
     values[] = { 1, 3, 5, 7 , 10 , -100 };
-    default = -100;
+    default = 3;
   };
   class SaveTime
   {
@@ -38,18 +55,11 @@ class params {
     values[] = { 5, 30, 60, 300 , 900 , 1800 };
     default = 30;
   };
-  class MissionGroup
+  class CampaignModeEnabled
   {
-    Title = "ID actual de campaña (Cambiar desde ext)";
-    texts[] = { "Campaña Oficial" };
-    values[] = { 220520 };
-    default = 220520;
-  };
-  class EngineArtilleryEnabled
-  {
-    Title = "Activar computadora de artilleria";
-    texts[] = { "Si", "No" };
-    values[] = { 1, 0 };
+    Title = "Modo de campaña";
+    texts[] = { "Desactivado", "Activado" };
+    values[] = { 0, 1 };
     default = 1;
   };
 };
