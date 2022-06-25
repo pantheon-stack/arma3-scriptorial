@@ -2,7 +2,7 @@
   AUTHOR: Dikus
 
   Teletransporta al jugador a la ubicación del 2do parametro
-  [ player, custom_respawn ] call A3L_fnc_teleportToMarker;
+  [ player, custom_respawn ] call A3L_fnc_teleportToPosition;
 
 */
 

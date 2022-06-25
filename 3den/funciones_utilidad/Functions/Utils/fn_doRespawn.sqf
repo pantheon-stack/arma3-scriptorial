@@ -14,24 +14,8 @@ if ( !(local _unit) ) exitWith {
   false;
 };
 
-_a3l_prefix = format ["a3l_%1_%2", worldName, missionName];
-
-_last_position = profileNamespace getVariable [ format ["%1_last_position", _a3l_prefix], []];
-_has_last_position = (count _last_position) != 0;
-
-_last_vehicle_id = profileNamespace getVariable [ format ["%1_last_vehicle_id", _a3l_prefix], ""];
-
-_last_vehicle = missionNamespace getVariable [_last_vehicle_id, objNull];
-
-//_last_vehicle puede ser el mismo jugador
-_was_in_vehicle = !(isNull _last_vehicle) && _last_vehicle != _unit;
-
-if ( _has_last_position && !_was_in_vehicle ) exitWith {
-  [ _unit, _last_position ] call A3L_fnc_teleportToPosition;
-};
-
-if( _has_last_position && _was_in_vehicle && alive _last_vehicle ) exitWith {
-  _unit moveInAny _last_vehicle;
+if ( [ _unit ] call A3LCampaign_fnc_doRespawn ) exitWith {
+  true;
 };
 
 _player_side = side _unit;
