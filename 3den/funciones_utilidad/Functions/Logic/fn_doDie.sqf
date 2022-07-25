@@ -2,7 +2,7 @@
   AUTHOR: Dikus
 
   Ejecuta la lógica de muerte del jugador
-  [ -1 ] call A3L_fnc_doDie;
+  [ player ] call A3L_fnc_doDie;
 
 */
 params [ [ "_player", player ] ];

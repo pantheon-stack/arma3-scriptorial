@@ -2,7 +2,7 @@
   AUTHOR: Dikus
 
   Ejecuta la lógica de muerte del jugador
-  [ -1 ] call A3L_fnc_doDie;
+  [ "mi_trigger" ] call A3L_fnc_forceTrigger;
 
 */
 params [ "_trigger", ["_condition", "true"] ];

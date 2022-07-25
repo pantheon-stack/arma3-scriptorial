@@ -1,6 +1,9 @@
 params ["_newUnit", "_oldUnit", "_respawn", "_respawnDelay"];
 private ["_uid", "_player_lives", "_remaining_lives", "_newUnit"];
 
+_uid = "init_campaign_" + (getPlayerUID player);
+missionNamespace setVariable [ _uid, true, true ];
+
 _uid = "lives_" + (getPlayerUID player);
 _player_lives = missionNamespace getVariable [ _uid, [false, 0] ];
 

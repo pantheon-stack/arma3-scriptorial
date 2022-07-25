@@ -28,6 +28,8 @@ if ( isServer ) then {
     if ( _players_total_lives > _default_total_lives ) then {
       _players_total_lives = _default_total_lives;
     };
+
+    // [ true, _players_total_lives ] => [lives_enabled, total_lives]
     missionNamespace setVariable [ _uid, [ true, _players_total_lives ], true ];
 
   } forEach _all_players;

@@ -37,3 +37,5 @@ if( _has_last_position && _was_in_vehicle && alive _last_vehicle ) exitWith {
   _unit moveInAny _last_vehicle;
   true;
 };
+
+false;

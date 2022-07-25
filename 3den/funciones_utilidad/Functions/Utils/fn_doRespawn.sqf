@@ -8,7 +8,7 @@
 */
 
 params [ "_unit" ];
-private [ "_player_side", "_my_respawn", "_last_position", "_last_vehicle", "_was_in_vehicle", "_has_last_position" ];
+private [ "_player_side", "_my_respawn" ];
 
 if ( !(local _unit) ) exitWith {
   false;

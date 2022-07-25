@@ -26,6 +26,7 @@ class CfgFunctions {
   };
   class A3LCampaign {
     class Campaign {
+      class init {};
       class doRespawn {};
       class initPlayerLocal {};
       class onPlayerKilled {};
@@ -61,6 +62,13 @@ class params {
     Title = "Modo de campaña";
     texts[] = { "Desactivado", "Activado" };
     values[] = { 0, 1 };
+    default = 0;
+  };
+  class CampaignSQFMission
+  {
+    Title = "Mision de campaña";
+    texts[] = { "Ninguna", "Primera", "Segunda", "Tercera", "Cuarta", "Quinta", "Sexta", "Septima", "Octava" };
+    values[] = { 0, 1, 2, 3, 4, 5, 6, 7, 8 };
     default = 0;
   };
 };
