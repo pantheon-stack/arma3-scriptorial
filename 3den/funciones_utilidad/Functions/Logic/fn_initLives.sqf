@@ -13,6 +13,7 @@ params [ [ "_player", objNull ], ["_default_total_lives", 3] ];
 private ["_total_lives", "_all_players", "_headless_clients", "_players_total_lives"];
 
 if ( isServer ) then {
+  "init lives..." call A3L_fnc_debug;
 
   if ( isNull _player ) then {
     _headless_clients = entities "HeadlessClient_F";
@@ -24,13 +25,18 @@ if ( isServer ) then {
 
   {
     _uid = "lives_" + (getPlayerUID _x);
-    _players_total_lives = missionNamespace getVariable [ _uid, _default_total_lives ];
-    if ( _players_total_lives > _default_total_lives ) then {
-      _players_total_lives = _default_total_lives;
+    _players_total_lives = missionNamespace getVariable [ _uid, [true, _default_total_lives] ];
+    [format [
+      "Lives %1 = %2",
+      _uid,
+      _players_total_lives
+    ]] call A3L_fnc_debug;
+    if ( (_players_total_lives select 1) > _default_total_lives ) then {
+      _players_total_lives set [1, _default_total_lives];
     };
 
     // [ true, _players_total_lives ] => [lives_enabled, total_lives]
-    missionNamespace setVariable [ _uid, [ true, _players_total_lives ], true ];
+    missionNamespace setVariable [ _uid, _players_total_lives, true ];
 
   } forEach _all_players;
 

@@ -28,5 +28,5 @@ if ( _player_lives select 0 ) then {
     _player_lives set [1, 0];
   };
   // revisar si se modifica por referencia
-  // missionNamespace setVariable [ _uid, _player_lives, true ];
+  missionNamespace setVariable [ _uid, _player_lives, true ];
 };

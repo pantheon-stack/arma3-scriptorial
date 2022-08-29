@@ -16,14 +16,12 @@ if ( !(local _unit) || _campaign_mode_enabled == 0 ) exitWith {
   false;
 };
 
-_a3l_prefix = format ["a3l_%1_%2", worldName, missionName];
-
-_last_position = profileNamespace getVariable [ format ["%1_last_position", _a3l_prefix], []];
+_last_position = missionProfileNamespace getVariable [ "a3l_last_position", [] ];
 _has_last_position = (count _last_position) != 0;
 
-_last_vehicle_id = profileNamespace getVariable [ format ["%1_last_vehicle_id", _a3l_prefix], ""];
+_last_vehicle_id = missionProfileNamespace getVariable [ "a3l_last_vehicle_id", "" ];
 
-_last_vehicle = missionNamespace getVariable [_last_vehicle_id, objNull];
+_last_vehicle = missionProfileNamespace getVariable [_last_vehicle_id, objNull];
 
 //_last_vehicle puede ser el mismo jugador
 _was_in_vehicle = !(isNull _last_vehicle) && _last_vehicle != _unit;

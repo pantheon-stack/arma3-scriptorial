@@ -1,4 +1,25 @@
-respawnOnStart = 1;
+persistent = 1;
+
+respawn = "BASE";
+/*
+-1 - Dont respawn on start. Don't run respawn script on start.
+ 0 - Dont respawn on start. Run respawn script on start.
+ 1 - Respawn on start. Run respawn script on start.
+*/
+// Changing this value to 1 leads to loadout to work in a unwanted manner
+// when player spawns it kills the current player
+respawnOnStart = 0;
+respawnButton = 1;
+respawnDelay = 5;
+
+missionGroup = "MyMissionCollectionName";
+
+class Header
+{
+	gameType = Coop;	// Game type
+	minPlayers =  1;	// minimum number of players the mission supports
+	maxPlayers = 10;	// maximum number of players the mission supports
+};
 
 class CfgFunctions {
   class A3L {
@@ -15,6 +36,7 @@ class CfgFunctions {
       class saveLoadout {};
       class surrenderGroup {};
       class teleportToPosition {};
+      class debug {};
     };
     class Logic {
       class forceTrigger {};
@@ -48,7 +70,7 @@ class params {
     Title = "Cantidad de vidas por persona";
     texts[] = { "1", "3", "5", "7", "10", "Sin limite" };
     values[] = { 1, 3, 5, 7 , 10 , -100 };
-    default = -100;
+    default = 3;
   };
   class SaveTime
   {
@@ -61,6 +83,41 @@ class params {
   {
     Title = "Modo de campaña";
     texts[] = { "Desactivado", "Activado" };
+    values[] = { 0, 1 };
+    default = 1;
+  };
+  class PositionPersistanceEnabled
+  {
+    Title = "Persistencia de posición";
+    texts[] = { "Desactivado", "Activado" };
+    values[] = { 0, 1 };
+    default = 0;
+  };
+  class LoadoutPersistanceEnabled
+  {
+    Title = "Persistencia de inventario";
+    texts[] = { "Desactivado", "Activado" };
+    values[] = { 0, 1 };
+    default = 1;
+  };
+  class ObjectPersistanceEnabled
+  {
+    Title = "Persistencia de objetos";
+    texts[] = { "Desactivado", "Activado" };
+    values[] = { 0, 1 };
+    default = 0;
+  };
+  class VehiclePersistanceEnabled
+  {
+    Title = "Persistencia de vehiculos";
+    texts[] = { "Desactivado", "Activado" };
+    values[] = { 0, 1 };
+    default = 0;
+  };
+  class DeleteLoadoutOnRespawn
+  {
+    Title = "Quitar equipo al reaparecer";
+    texts[] = { "No", "Si" };
     values[] = { 0, 1 };
     default = 0;
   };
