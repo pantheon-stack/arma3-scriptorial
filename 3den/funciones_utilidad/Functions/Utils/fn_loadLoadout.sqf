@@ -4,10 +4,10 @@
   [ _player ] call A3L_fnc_loadLoadout;
 */
 
-params [ "_unit" ];
+params [ "_player" ];
 private [ "_my_loadout" ];
 
-if ( !(local _unit) ) exitWith {
+if ( !(local _player) ) exitWith {
   false;
 };
 
@@ -26,7 +26,17 @@ if (
   _loadout_persistance_enabled == 1 &&
   (count _my_loadout) > 0
 ) then {
-  _unit setUnitLoadout _my_loadout;
+  _player setUnitLoadout _my_loadout;
+};
+
+_backpack_container = backpackContainer _player;
+if ( !(isNull _backpack_container) ) then {
+  _backpack_variables = missionProfileNamespace getVariable [ "a3l_backpack_variables", [] ];
+  {
+    _key = _x select 0;
+    _value = _x select 1;
+    _backpack_container setVariable [_key, _value];
+  } forEach _backpack_variables;
 };
 
 true;
