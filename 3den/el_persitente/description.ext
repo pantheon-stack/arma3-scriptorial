@@ -1,0 +1,95 @@
+
+missionGroup = "MyMissionCollectionName";
+
+class Header
+{
+  gameType = Coop;
+};
+
+class CfgFunctions {
+  class A3L {
+    class HeadlessClients {
+      class initHeadlessClients {};
+      class loadToHeadlessClient {};
+    };
+    class Utils {
+      class doRespawn {};
+      class isGroup {};
+      class isGroupInVehicle {};
+      class loadLoadout {};
+      class saveCurrentPosition {};
+      class saveLoadout {};
+      class surrenderGroup {};
+      class teleportToPosition {};
+      class debug {};
+    };
+    class Logic {
+      class forceTrigger {};
+      class disableLives {};
+      class doDie {};
+      class initLives {};
+      class setLives {};
+    };
+  };
+  class A3LCampaign {
+    class Campaign {
+      class init {};
+      class doRespawn {};
+      class initPlayerLocal {};
+      class onPlayerKilled {};
+      class onPlayerRespawn {};
+    };
+  };
+  class A3LLives {
+    class Lives {
+      class initPlayerServer {};
+      class onPlayerKilled {};
+      class onPlayerRespawn {};
+    };
+  };
+};
+
+class params {
+  class TotalLives
+  {
+    Title = "Cantidad de vidas por persona";
+    texts[] = { "1", "3", "5", "7", "10", "Sin limite" };
+    values[] = { 1, 3, 5, 7 , 10 , -100 };
+    default = 3;
+  };
+  class SaveTime
+  {
+    Title = "Tiempo de guardado de jugador";
+    texts[] = { "5 seg", "30 seg", "1 min", "5 min", "15 min", "30 min" };
+    values[] = { 5, 30, 60, 300 , 900 , 1800 };
+    default = 30;
+  };
+  class CampaignModeEnabled
+  {
+    Title = "Modo de campaña";
+    texts[] = { "Desactivado", "Activado" };
+    values[] = { 0, 1 };
+    default = 1;
+  };
+  class LoadoutPersistanceEnabled
+  {
+    Title = "Persistencia de inventario";
+    texts[] = { "Desactivado", "Activado" };
+    values[] = { 0, 1 };
+    default = 1;
+  };
+  class DeleteLoadoutOnRespawn
+  {
+    Title = "Quitar equipo al reaparecer";
+    texts[] = { "No", "Si" };
+    values[] = { 0, 1 };
+    default = 0;
+  };
+  class CampaignSQFMission
+  {
+    Title = "Mision de campaña";
+    texts[] = { "Ninguna", "Primera", "Segunda", "Tercera", "Cuarta", "Quinta", "Sexta", "Septima", "Octava" };
+    values[] = { 0, 1, 2, 3, 4, 5, 6, 7, 8 };
+    default = 0;
+  };
+};

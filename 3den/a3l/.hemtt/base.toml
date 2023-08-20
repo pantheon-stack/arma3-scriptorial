@@ -1,0 +1,7 @@
+name = "Arma 3 Latam"
+mainprefix = "z"
+prefix = "a3l"
+author = "Dikusss"
+template = "cba"
+folder_optionals = true
+sig_version = 3
