@@ -8,6 +8,11 @@
 params [ [ "_player", player ] ];
 private [ "_uid", "_total_lives", "_remaining_lives" ];
 
+waitUntil {
+  sleep 1;
+  missionNamespace getVariable ["a3l_lives_system_init", false];
+};
+
 _uid = "lives_" + (getPlayerUID _player);
 _total_lives = missionNamespace getVariable [ _uid, [false, 0] ];
 

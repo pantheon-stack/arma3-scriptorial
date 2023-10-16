@@ -48,23 +48,26 @@ if ( isServer ) then {
 
   } forEach _all_players;
 
+  missionNamespace setVariable ["a3l_lives_system_init", true, true];
 };
 
 if (hasInterface && local player) then {
   // on client assign events handlers for managing
 
   [] spawn {
+    
     waitUntil {
       sleep 1;
-      !isNil { player };
+      !isNil { player } && missionNamespace getVariable ["a3l_lives_system_init", false];
     };
+
     _uid = "lives_" + (getPlayerUID player);
     _player_lives = missionNamespace getVariable [ _uid, [false, 0] ];
 
     if ( _player_lives select 0 ) then {
       _remaining_lives = _player_lives select 1;
       if ( _remaining_lives > 0 ) then {
-        cutText [ str (formatText ["<t color='#ff0000' size='2'> Te quedan %1 vidas </t>", _remaining_lives]), "PLAIN DOWN", -1, true, true ];
+        [player] call FUNC(hintLives);
       } else {
         call FUNC(doDie);
       };
@@ -83,6 +86,11 @@ if (hasInterface && local player) then {
       diag_log(_unit);
       hint "Reapareci";
 
+      waitUntil {
+        sleep 1;
+        !isNil { _unit } && missionNamespace getVariable ["a3l_lives_system_init", false];
+      };
+
       _uid = "lives_" + (getPlayerUID _unit);
       _player_lives = missionNamespace getVariable [ _uid, [false, 0] ];
 
@@ -96,7 +104,7 @@ if (hasInterface && local player) then {
             [ "Terminate", [ _unit, [], true ] ] call BIS_fnc_EGSpectator;
             _unit setVariable ["a3l_is_dead", false, true];
           };
-          cutText [ str (formatText ["<t color='#ff0000' size='2'> Te quedan %1 vidas </t>", _remaining_lives]), "PLAIN DOWN", -1, true, true ];
+          [_unit] call FUNC(hintLives);
         } else {
           call FUNC(doDie);
         };

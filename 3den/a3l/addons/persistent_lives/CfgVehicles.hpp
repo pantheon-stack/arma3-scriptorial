@@ -4,6 +4,8 @@ class CfgVehicles {
   class Logic;
   class Module_F: Logic
   {
+    class EventHandlers;
+    
     class AttributesBase
     {
       class Default;
@@ -28,30 +30,35 @@ class CfgVehicles {
     function = "";
     scope = 1;
     scopeCurator = 2;
-    class EventHandlers {
+    class EventHandlers: EventHandlers {
         //init = QUOTE(_this call FUNC(initModule));
-        class CBA_Extended_EventHandlers: CBA_Extended_EventHandlers_base {};
+        class CBA_Extended_EventHandlers: CBA_Extended_EventHandlers {};
     };
   };
 
+  // TODO crear funcion especifica para el modulo usando logica de juego, esta es la encargada de abrir la ventana y la logica
+  //  Buscar ejemplos de modulos vanilla
   class GVAR(moduleSetLives): GVAR(moduleBase) {
     scope = 2;
     curatorCanAttach = 1;
     category = GVAR(Misc);
     displayName = "Set Lives";
-    function = QFUNC(setLives);
+    function = QFUNC(moduleSetLives);
     curatorInfoType = "RscDisplaySetLives";
+    isTriggerActivated = 1;
+    enableDisplay = 1;
     //icon = "\TAG_addonName\data\icon_Nuke_ca.paa";
 
     // function = "A3L_fnc_setLives";	// Name of function triggered once conditions are met
-    // functionPriority = 1;				// Execution priority, modules with lower number are executed first. 0 is used when the attribute is undefined
-    // isGlobal = 1;						// 0 for server only execution, 1 for global execution, 2 for persistent global execution
-    // isTriggerActivated = 1;				// 1 for module waiting until all synced triggers are activated
-    // isDisposable = 1;					// 1 if modules is to be disabled once it is activated (i.e. repeated trigger activation won't work)
-    // is3DEN = 0;							// 1 to run init function in Eden Editor as well
+    functionPriority = 1;				// Execution priority, modules with lower number are executed first. 0 is used when the attribute is undefined
+    isGlobal = 0;						// 0 for server only execution, 1 for global execution, 2 for persistent global execution
+    
+    isDisposable = 1;					// 1 if modules is to be disabled once it is activated (i.e. repeated trigger activation won't work)
+    is3DEN = 1;							// 1 to run init function in Eden Editor as well
     // curatorInfoType = "RscDisplayAttributeModuleNuke"; // Menu displayed when the module is placed or double-clicked on by Zeus
 
     // Module attributes (uses https://community.bistudio.com/wiki/Eden_Editor:_Configuring_Attributes#Entity_Specific):
+    // Change to Arguments
     class Attributes: AttributesBase {
       // Arguments shared by specific module type (have to be mentioned in order to be present):
       class Units: Units {
@@ -59,27 +66,12 @@ class CfgVehicles {
       };
 
       // Module-specific arguments:
-      class NumberOfLives: CheckboxNumber {
-        property = "TAG_Module_Nuke_Yield";				// Unique property (use "<tag>_<moduleClass>_<attributeClass>" format to ensure that the name is unique)
-        displayName = "Nuclear weapon yield";			// Argument label
-        tooltip = "How strong will the explosion be";	// Tooltip description
+      class NumberOfLives: Edit {
+        property = "A3L_Module_Number_Of_Lives";				// Unique property (use "<tag>_<moduleClass>_<attributeClass>" format to ensure that the name is unique)
+        displayName = "Numero de vidas";			// Argument label
+        tooltip = "Cantidad de vidas inicial";	// Tooltip description
         typeName = "NUMBER";							// Value type, can be "NUMBER", "STRING" or "BOOL"
-        defaultValue = "50";							// Default attribute value. Warning: This is an expression, and its returned value will be used (50 in this case).
-
-        // Listbox items:
-        class Values
-        {
-          class 50Mt	{ name = "50 megatons";	value = 50; };
-          class 100Mt	{ name = "100 megatons"; value = 100; };
-        };
-      };
-
-      class Name: Edit
-      {
-        displayName = "Name";
-        tooltip = "Name of the nuclear device";
-        // Default text for the input box:
-        defaultValue = """Tsar Bomba"""; // Because this is an expression, one must have a string within a string to return a string
+        defaultValue = "3";							// Default attribute value. Warning: This is an expression, and its returned value will be used (50 in this case).
       };
 
       class ModuleDescription: ModuleDescription{}; // Module description should be shown last

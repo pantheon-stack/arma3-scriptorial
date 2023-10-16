@@ -1,7 +1,13 @@
+#include "\z\a3l\addons\persistent_lives\script_component.hpp"
+
 // configfile >> "RscDisplaySetLives"
 class RscDisplaySetLives
 {
 	idd = 1001;
+	scriptName="RscDisplaySetLives";
+	scriptPath="A3L_Lives_GUI";
+	onLoad="[""onLoad"",_this,""RscDisplaySetLives"",""A3L_Lives_GUI""] call (uinamespace getvariable ""BIS_fnc_initDisplay"")";
+	onUnload="[""onUnload"",_this,""RscDisplaySetLives"",""A3L_Lives_GUI""] call (uinamespace getvariable ""BIS_fnc_initDisplay"")";
 	class Controls
 	{
 		////////////////////////////////////////////////////////
@@ -58,7 +64,6 @@ class RscDisplaySetLives
 			h = 0.033 * safezoneH;
 			colorText[] = {1,1,1,1};
 			colorBackground[] = {0,0,0,0.8};
-			onButtonClick = QUOTE(_this call FUNC(okUISetLives));
 		};
 		class RscButtonMenuCancel_2700: RscButtonMenuCancel
 		{
@@ -94,6 +99,8 @@ class RscDisplaySetLives
 			y = 0.401 * safezoneH + safezoneY;
 			w = 0.020625 * safezoneW;
 			h = 0.033 * safezoneH;
+
+			text = "3";
 		};
 		////////////////////////////////////////////////////////
 		// GUI EDITOR OUTPUT END

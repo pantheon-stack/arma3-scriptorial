@@ -15,6 +15,11 @@ private ["_all_players", "_headless_clients"];
 
 if ( isServer ) then {
 
+  waitUntil {
+    sleep 1;
+    missionNamespace getVariable ["a3l_lives_system_init", false];
+  };
+
   if ( isNull _player ) then {
     _headless_clients = entities "HeadlessClient_F";
     _all_players = allPlayers - _headless_clients;

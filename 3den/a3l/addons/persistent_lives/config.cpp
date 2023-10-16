@@ -24,6 +24,7 @@ PRELOAD_ADDONS;
 #include "\z\a3l\addons\persistent_lives\CfgEventHandlers.hpp"
 #include "\z\a3l\addons\persistent_lives\CfgFactionClasses.hpp"
 #include "\z\a3l\addons\persistent_lives\CfgVehicles.hpp"
+#include "\z\a3l\addons\persistent_lives\CfgScriptPaths.hpp"
 
 #include "\z\a3l\addons\persistent_lives\UI\BaseControls.hpp"
 #include "\z\a3l\addons\persistent_lives\UI\RscDisplaySetLives.hpp"
